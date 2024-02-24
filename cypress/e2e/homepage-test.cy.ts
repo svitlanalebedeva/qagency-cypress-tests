@@ -163,4 +163,27 @@ describe('Homepage Test', () => {
       cy.get(':nth-child(5) > .c-footer__navLink').scrollIntoView().contains('Legal').click();
       cy.get('h2').should('have.text', 'Legal');
     });
+    it('should display homepage correctly in mobile size', () => {
+      cy.viewport('iphone-6')
+      cy.get('#header > .c-header__aside > .c-header__logoWrapper > a > .c-header__logoImg').should('be.visible');
+      cy.get('.c-navigation__hamburger > :nth-child(1)').click();
+      cy.get('.u-textCenter > :nth-child(1) > .c-navigation__link').should('be.visible');
+      cy.get('.u-flex > .e-btn--secondary').should('be.visible');
+      cy.get('.c-navigation__hamburger > :nth-child(2)').click();
+      cy.get('.c-hero__wrapper > .e-btn--primary').should('be.visible');
+      cy.get('.l-col--8 > .e-h2').scrollIntoView().should('be.visible');
+      cy.get('.img-mobile').scrollIntoView().should('be.visible');
+      cy.get('[href="https://q.agency/?post_type=projects&p=509"]').scrollIntoView().should('be.visible');
+      cy.get('[href="https://q.agency/?post_type=projects&p=1895"] > .u-relative > .l-row > .c-images--single__textWrap').scrollIntoView().should('be.visible');
+      cy.get('[href="https://q.agency/?post_type=projects&p=1917"] > .u-relative > .l-row > .c-images--single__imgWrap > .c-images--single__img').scrollIntoView().should('be.visible');
+      cy.get('[href="https://q.agency/?post_type=projects&p=514"] > .u-relative > .l-row > .c-images--single__imgWrap > .c-images--single__img').scrollIntoView().should('be.visible');
+      cy.get('.c-cta > .e-btn--secondary').scrollIntoView().should('be.visible');
+      cy.get('a[href="https://q.agency/product-innovation/"] > .c-twoColumnBox__box > .e-p').scrollIntoView().should('be.visible');
+      cy.get('a[href="https://q.agency/for-ctos/"] > .c-twoColumnBox__box > .e-p').scrollIntoView().should('be.visible');
+      cy.get('.c-reviews__row > :nth-child(1) > .e-h3').scrollIntoView().should('be.visible');
+      cy.get('.swiper-slide-active > .c-listItems__btnWrapper > .e-p--body-50').scrollIntoView().should('be.visible');
+      cy.get('.c-cta > .e-btn--primary').scrollIntoView().should('be.visible');
+      cy.get('.c-footer__logoImg').scrollIntoView().should('be.visible');
+      cy.get(':nth-child(1) > .c-footer__leftColumn').scrollIntoView().should('be.visible');
+    });
     });
