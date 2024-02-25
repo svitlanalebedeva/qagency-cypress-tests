@@ -7,6 +7,7 @@ describe('Homepage Test', () => {
     cy.viewport(1280, 800);
     cy.get('#wt-cli-accept-all-btn').click();
     })
+    
    it('should click on logo in the header and verify the title of loaded page', () => {
       cy.get('.c-header__aside--desktop > .c-header__logoWrapper > a > .c-header__logoImg').click();
       cy.get('.e-heroHeading').should('be.visible')
