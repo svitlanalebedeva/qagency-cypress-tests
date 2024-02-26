@@ -135,7 +135,7 @@ describe('Homepage Test', () => {
     });
     it('should be able to input email address and subscribe to newsletters ', () => {
       cy.get('#ff_4_email').clear()
-      .type('svetlana.u.lebedeva@gmail.com');
+      .type('cypress_cypress@yahoo.com');
       cy.get('.ff-btn').should('be.enabled');
     }); 
     it('social media icons in the footer should be displayed', () => {
